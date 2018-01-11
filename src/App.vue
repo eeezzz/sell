@@ -7,9 +7,10 @@
     <my-nav></my-nav>
 
     <!-- 主體內容 -->
-    <div class="content">
+    <!-- <div class="content">
       content
-    </div>
+    </div> -->
+    <router-view></router-view>
 
   </div>
 </template>

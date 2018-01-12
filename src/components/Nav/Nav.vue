@@ -56,6 +56,7 @@ export default {
     height: 2px;
     background: #FFBB22;
     display: block;
+    /* 調整底線位置 */
     margin-top: -2px;
     margin-left: 50%;
     transform: translateX(-50%);

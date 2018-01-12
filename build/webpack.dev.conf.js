@@ -3,24 +3,24 @@ const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
 const merge = require('webpack-merge')
-// const path = require('path')
+const path = require('path')
 const baseWebpackConfig = require('./webpack.base.conf')
-// const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
-// 导入express
+// 1 import express
 const express = require('express')
-// 创建express实例
+// 2 create express instance
 const app = express()
-// 1、读取json数据
+// 3 read data of json
 var goods = require('../data/01-商品页(点菜).json');
 var ratings = require('../data/02-商品页(评价).json');
 var seller = require('../data/03-商品页(商家).json');
-// 2、路由
+
+// 0 create routes instance (no need now!!)
 //var routes = express.Router();
-// 4、中间件
 //app.use('/api',routes);
 
 const HOST = process.env.HOST
@@ -51,20 +51,20 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     watchOptions: {
       poll: config.dev.poll,
     },
-    // 3、编写接口
+    // 4 create mock api
     before(app) {
       app.get('/api/goods', (req, res) => {
-        // 返回数据给客户端，返回json数据
+        // reponse json data
         res.json(goods);
       }),
-        app.get('/api/ratings', (req, res) => {
-          // 返回数据给客户端，返回json数据
-          res.json(ratings);
-        }),
-        app.get('/api/seller', (req, res) => {
-          // 返回数据给客户端，返回json数据
-          res.json(seller);
-        })
+      app.get('/api/ratings', (req, res) => {
+        // reponse json data
+        res.json(ratings);
+      }),
+      app.get('/api/seller', (req, res) => {
+        // reponse json data
+        res.json(seller);
+      })
     }
   },
   plugins: [

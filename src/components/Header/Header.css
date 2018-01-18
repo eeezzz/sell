@@ -1,6 +1,8 @@
 .header {
-  height: 180px;
+  height: 130px;
   padding-top: 20px;
+  background-size: 100% 135%;
+  background-position: center -12px;
 }
 
 .header .top-wrapper{
@@ -10,7 +12,7 @@
 .header .top-wrapper .back-wrapper{
   width: 50px;
   height: 31px;
-  background: red;
+  /* background: red; */
   position: absolute;
   left: 0;
   top: 0;
@@ -56,11 +58,227 @@
   /* 去除選中效果 */
   outline: none;
 }
+
 .header .top-wrapper .more-wrapper{
-  width: 104px;
-  height: 31px;
-  background: blue;
+  width: 65px;
+  height: 24px;
+  /* background: blue; */
   position: absolute;
   right: 0;
   top: 0;
+  padding: 7px 15px 0 24px;
+}
+
+.header .top-wrapper .more-wrapper .spelling-bt {
+  width: 30px;
+  height: 17px;
+  color: white;
+  border: 1px solid white;
+  text-decoration: none;
+  font-size: 10px;
+  /* text-align: center; */
+  /* float: left; */
+}
+
+
+
+/* 主題內容 */
+.content-wrapper {
+  padding: 17px 10px 11px;
+  height: 50px;
+}
+
+.content-wrapper .icon{
+  width: 50px;
+  height: 50px;
+  background-size: 135% 100%;
+  background-position: center;
+  border-radius: 5px;
+  float: left;
+}
+
+.content-wrapper .name{
+  float: left;
+  padding: 18px 0 0 12px;
+
+}
+.content-wrapper .name h3{
+  color:white;
+  font-size: 16px;
+  font-weight: bold;
+}
+.content-wrapper .collect {
+  float: right;
+  width: 25px;
+  height: 37px;
+  text-align: center;
+  padding-top: 6px;
+}
+
+.content-wrapper .collect img{
+  width: 20px;
+  height: 20px;
+}
+
+.content-wrapper .collect span{
+  font-size: 11px;
+  margin-top: 7px;
+  color: white;
+}
+
+/* 公告內容 */
+.bulletin-wrapper{
+  height: 16px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.bulletin-wrapper .icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  float: left;
+}
+
+.bulletin-wrapper .text {
+  color: white;
+  font-size: 11px;
+  float: left;
+  line-height: 16px;
+}
+
+.bulletin-wrapper .detail {
+  color: white;
+  float: right;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.bulletin-wrapper .detail span {
+  font-size: 16px;
+  line-height: 16px;
+  float: right;
+}
+
+/* 公告詳情 */
+.header .bulletin-detail{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(98,98,98,0.8)
+}
+
+.header .bulletin-detail .detail-wrapper{
+  width: 100%;
+  height: 100%;
+  padding: 43px 20px 125px;
+  box-sizing: border-box;
+
+}
+
+.header .bulletin-detail .detail-wrapper .main-wrapper{
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.header .bulletin-detail .detail-wrapper .main-wrapper .icon{
+  width: 60px;
+  height: 60px;
+  background-size: 135% 100%;
+  background-position: center;
+  border-radius: 5px;
+  /* 水平置中 */
+  /* text-align:cener 主要處理 inline element*/
+  /* block element */
+  /* margin: 0 auto */
+  /* 或轉為inline-block元素, 以text-align:cener */
+  display: inline-block; 
+  margin-top: 40px;
+}
+
+.header .bulletin-detail .detail-wrapper .main-wrapper .name{
+  font-size: 15px;
+  color: white;
+  margin-top: 13px;
+}
+
+.header .bulletin-detail .detail-wrapper .main-wrapper .tip{
+  font-size: 11px;
+  color: #bababc;
+  margin-top: 8px;
+}
+
+.header .bulletin-detail .detail-wrapper .main-wrapper .tip i{
+  margin: 0 7px;
+}
+
+.header .bulletin-detail .detail-wrapper .main-wrapper .time{
+  font-size: 11px;
+  color: white;
+  margin-top: 13px;
+}
+
+.header .bulletin-detail .detail-wrapper .main-wrapper .discounts{
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.header .bulletin-detail .detail-wrapper .main-wrapper .discounts p{
+  padding-top: 15px;
+  border-top: 1px solid #bababc;
+}
+
+.header .bulletin-detail .detail-wrapper .main-wrapper .discounts img{
+  width: 16px;
+  height: 16px;
+
+  /* margin-left: -130px; */
+  /* 圖片垂直罝中 */
+  vertical-align: middle;
+
+  
+}
+
+.header .bulletin-detail .detail-wrapper .main-wrapper .discounts span{
+  font-size: 11px;
+  color: white;
+  line-height: 32px;
+
+}
+
+.header .bulletin-detail .detail-wrapper .close-wrapper{
+  padding-top: 20px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.header .bulletin-detail .detail-wrapper .close-wrapper span{
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  color: white;
+  background: rgba(118.118,118, 0.7);
+  border: 1px solid rgba(140,140,140,0.9);
+  border-radius: 50%;
+  line-height: 40px;
+  display: inline-block;
+}
+
+/* 過渡效果 */
+.detail-enter-active, .detail-leave-active{
+  transition: 2s all;
+}
+
+.detail-enter, .detail-leave-to{
+  opacity: 0;
+}
+
+.detail-enter-to, .detail-leave{
+  opacity: 1;
 }

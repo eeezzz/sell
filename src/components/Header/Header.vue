@@ -53,6 +53,10 @@
             <div class="icon" :style="icon_bgi"></div>
             <h3 class="name">{{ poiInfo.name }}</h3>
             <!-- 評價 -->
+            <div class="score">
+              <Star :score="poiInfo.wm_poi_score"></Star>
+              <span>{{poiInfo.wm_poi_score}}</span>
+            </div>
             <p class="tip">
               {{poiInfo.min_price_tip}} <i>|</i>
               {{poiInfo.shipping_fee_tip}}<i>|</i>
@@ -80,6 +84,9 @@
 </template>
 
 <script>
+
+import Star from '../Star/Star'
+
 export default {
   props: {
     poiInfo:{
@@ -91,6 +98,9 @@ export default {
     return {
       isShow: false //公告詳情是否顯示
     }
+  },
+  components: {
+    Star,
   },
   computed: {
     header_bgi(){

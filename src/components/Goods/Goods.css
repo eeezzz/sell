@@ -1,0 +1,22 @@
+.goods{
+  display: flex;
+
+  /* 確定高度 */
+  position: absolute;
+  top: 190px;
+  bottom: 51px;
+
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.goods .menu-wrapper{
+  flex: 0 0 85px;
+  background-color: blue;
+}
+
+.goods .foods-wrapper{
+  flex: 1;
+  background-color: red;
+}

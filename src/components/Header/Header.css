@@ -206,6 +206,16 @@
   color: white;
   margin-top: 13px;
 }
+.header .bulletin-detail .detail-wrapper .main-wrapper .score{
+  margin-top: 6px;
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .score .star{
+  display: inline-block;
+  margin-right: 7px;
+}
+.header .bulletin-detail .detail-wrapper .main-wrapper .score span{
+  color: white;
+}
 
 .header .bulletin-detail .detail-wrapper .main-wrapper .tip{
   font-size: 11px;

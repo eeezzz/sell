@@ -161,7 +161,7 @@ export default {
         let height2 = this.listHeight[i+1]
 
         // 判斷是否在區間中
-        if (this.scrollY>=height1 && this.scrollY<height2){
+        if (!height2 || this.scrollY>=height1 && this.scrollY<height2){
           console.log('currentIndex=>',i)
           return i
         }

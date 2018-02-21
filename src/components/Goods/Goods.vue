@@ -58,7 +58,7 @@
 
     </div>
 
-    <shopcart></shopcart>
+    <shopcart :shipping_fee_tip="poiInfo.shipping_fee_tip" :min_price_tip="poiInfo.min_price_tip"></shopcart>
   </div>
 </template>
 
@@ -72,6 +72,7 @@ export default {
     return {
       container: {},
       goods: [],
+      poiInfo: {},
       listHeight: [],
       scrollY: 0,
       menuScroll: {},
@@ -130,6 +131,7 @@ export default {
         if (dataSource.code == 0){
           _this.container = dataSource.data.container_operation_source
           _this.goods = dataSource.data.food_spu_tags
+          _this.poiInfo = dataSource.data.poi_info
           console.log(_this.container)
           console.log(_this.goods)
          

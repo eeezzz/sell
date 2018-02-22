@@ -66,6 +66,7 @@
 .goods .foods-wrapper .food-list .food-item{
   display: flex;
   margin-bottom: 25px;
+  position: relative;
 }
 .goods .foods-wrapper .food-list .food-item .icon{
   flex: 0 0 63px;
@@ -122,5 +123,10 @@
   font-size: 12px;
 }
 
+.goods .foods-wrapper .food-list .food-item .cartcontrol-wrapper{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
 
 

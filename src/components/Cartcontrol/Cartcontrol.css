@@ -1,0 +1,33 @@
+* {
+  border: 1px solid black;
+}
+.cartcontrol{
+  /* 去掉inline-block所產生的空間 */
+  font-size: 0;
+}
+
+.cartcontrol .cart-decrease {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  font-size: 26px;
+  color: #b4b4b4;
+  /* vertical-align: bottom; */
+
+}
+.cartcontrol .count {
+  display: inline-block;
+  width: 25px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 26px;
+  vertical-align: top;
+}
+.cartcontrol .cart-add {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  font-size: 26px;
+  color: #ffb161;
+  /* vertical-align: bottom; */
+}

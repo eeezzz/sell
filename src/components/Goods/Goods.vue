@@ -50,7 +50,9 @@
                   <span class="unit">/{{food.unit}}</span>
                 </p>
               </div>
-
+              <div class="cartcontrol-wrapper">
+                <cartcontrol></cartcontrol>
+              </div>
             </li>
           </ul>
         </li>
@@ -66,6 +68,7 @@
 // 導入BScroll
 import BScroll from 'better-scroll'
 import Shopcart from '../shopcart/shopcart'
+import Cartcontrol from '../Cartcontrol/Cartcontrol'
 
 export default {
   data(){
@@ -153,6 +156,7 @@ export default {
   },
   components: {
     Shopcart,
+    Cartcontrol
   },
   computed: {
     // 根據右側的滾動位置，確定對應的索引下標

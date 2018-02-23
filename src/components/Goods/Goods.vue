@@ -16,6 +16,7 @@
             <img :src="item.icon" v-if="item.icon" class="icon" />
             {{item.name}}
           </p>
+          <i class="num" v-show="calculateCount(item.spus)">{{calculateCount(item.spus)}}</i>
         </li>
       </ul>
 
@@ -51,7 +52,7 @@
                 </p>
               </div>
               <div class="cartcontrol-wrapper">
-                <cartcontrol></cartcontrol>
+                <cartcontrol :food="food"></cartcontrol>
               </div>
             </li>
           </ul>
@@ -60,7 +61,12 @@
 
     </div>
 
-    <shopcart :shipping_fee_tip="poiInfo.shipping_fee_tip" :min_price_tip="poiInfo.min_price_tip"></shopcart>
+    <shopcart 
+      :selectFoods="selectFoods"
+      :shipping_fee_tip="poiInfo.shipping_fee_tip" 
+      :min_price_tip="poiInfo.min_price_tip" 
+    >
+    </shopcart>
   </div>
 </template>
 
@@ -89,8 +95,13 @@ export default {
     },
     initScroll(){
       
-      this.menuScroll = new BScroll(this.$refs.menuScroll, { click: true })
-      this.foodScroll = new BScroll(this.$refs.foodScroll, { probeType: 3 })
+      this.menuScroll = new BScroll(this.$refs.menuScroll, { 
+        click: true 
+      })
+      this.foodScroll = new BScroll(this.$refs.foodScroll, {
+        probeType: 3,
+        click: true 
+      })
 
       // 添加滾動監聽事件
       this.foodScroll.on('scroll', (pos) => {
@@ -122,6 +133,16 @@ export default {
       this.foodScroll.scrollToElement(el, 250)
 
     },
+    // 計算各分類購買數量
+    calculateCount(spus){
+      let count = 0
+      spus.forEach((food)=>{
+        if(food.count>0){
+          count+= food.count
+        }
+      })
+      return count
+    }
   },
 
   created(){
@@ -173,6 +194,21 @@ export default {
         }
       }
       return 0
+    },
+    // 當Cartcontrol異動food值後,會重新計算
+    selectFoods(){
+      let foods = []
+
+      this.goods.forEach((good)=>{
+        good.spus.forEach((food)=>{
+          if(food.count>0){
+            foods.push(food)
+          }
+        })
+      })
+      
+      // console.log('Good.selectFoods =>', foods)
+      return foods
     }
   },
 
